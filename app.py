@@ -49,10 +49,6 @@ with col1:
 
 with col2:
     st.title("Academic Portfolio")
-    st.subheader("Summary")
-    summary = record_data.get()
-    st.write(summary)
-
     st.subheader("Publications")
     pub_list = []
     group = works_data.get('group', [])
