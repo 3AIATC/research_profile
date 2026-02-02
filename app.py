@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-st.set_page_config(page_title="Researcher Profile", layout="wide")
+st.set_page_config(page_title="Charné Bornman: Researcher Profile", layout="wide")
 
 st.markdown("""
     <style>
@@ -11,7 +11,6 @@ st.markdown("""
     .stDataFrame { border: 1px solid #4a4a4a; }
     </style>
     """, unsafe_allow_html=True)
-
 
 def get_orcid_token():
     url = "https://orcid.org/oauth/token"
