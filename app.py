@@ -40,7 +40,7 @@ record_data = get_orcid_data(orcid_id, token, "record")
 name = person_data.get('name', {}).get('given-names', {}).get('value', 'Researcher')
 surname = person_data.get('name', {}).get('family-name', {}).get('value', '')
 
-st.image("assets/profile.jpg")
+st.image("assets/profile.jpg", width = 250)
 st.markdown(f"### {name} {surname}")
 st.write(f"ORCID: [{orcid_id}](https://orcid.org/{orcid_id})")
 st.title("Academic Portfolio")
