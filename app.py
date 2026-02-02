@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-st.set_page_config(page_title="Charné Bornman: Researcher Profile", layout="wide")
+st.set_page_config(page_title="Researcher Profile", layout="wide")
 
 st.markdown("""
     <style>
@@ -36,7 +36,7 @@ orcid_id = "0000-0003-4263-6034"
 
 person_data = get_orcid_data(orcid_id, token, "person")
 works_data = get_orcid_data(orcid_id, token, "works")
-
+record_data = get_orcid_data(orcid_id, token, "record")
 name = person_data.get('name', {}).get('given-names', {}).get('value', 'Researcher')
 surname = person_data.get('name', {}).get('family-name', {}).get('value', '')
 
@@ -49,10 +49,9 @@ with col1:
 
 with col2:
     st.title("Academic Portfolio")
-
-    st.subheader("Biography")
-    bio = person_data.get('biography', {}).get('content', 'No biography found.')
-    st.write(bio)
+    st.subheader("Summary")
+    summary = record_data.get()
+    st.write(summary)
 
     st.subheader("Publications")
     pub_list = []
